@@ -30,5 +30,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Siswa::factory()->count(10)->create();
+
+        $this->call(ArtikelSeeder::class);
     }
 }

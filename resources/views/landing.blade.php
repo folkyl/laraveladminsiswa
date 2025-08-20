@@ -10,5 +10,16 @@
     <a href="{{ url('/login') }}">
         <button>Login di sini</button>
     </a>
+    <a href="{{ url('/register') }}">
+        <button>Register disini</button>
+    </a>
+
+    @foreach ($artikel as $a => $data)
+        <a href="{{ url('/detil/'. $data->id) }}"> 
+            <h1>{{ $data->id}} {{ $data->judul }}</h1>
+        </a>
+        <p>{{ $data->isi }}</p>
+        <br>
+    @endforeach
 </body>
 </html>
