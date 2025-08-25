@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa', function (Blueprint $table) {
-            $table->id('idsiswa');
-            $table->timestamps();
+        Schema::create('dataguru', function (Blueprint $table) {
+            $table->id('idguru');
             $table->string('nama');
-            $table->integer('tb'); 
-            $table->integer('bb');
+            $table->string('mapel');
             $table->unsignedBigInteger('id');
             $table->foreign('id')->references('id')->on('dataadmin')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('siswa');
+        Schema::dropIfExists('dataguru');
     }
 };

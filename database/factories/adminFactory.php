@@ -19,8 +19,9 @@ class adminFactory extends Factory
     {
         return [
             //
-            'username' => 'admin', 
-            'password' => Hash::make('admin') 
+            'username' => $this->faker->unique()->userName(), 
+            'password' => Hash::make('admin'),
+            'role' => 'siswa'
         ];
     }
 }

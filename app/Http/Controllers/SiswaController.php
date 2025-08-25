@@ -43,4 +43,9 @@ class siswaController extends Controller
         $siswa->delete();
         return redirect()->route('home');
     }
+        public function index()
+    {
+        $guru = guru::all();
+        return view('guru.index', compact('guru'));
+    }
 }

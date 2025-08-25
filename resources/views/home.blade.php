@@ -10,6 +10,13 @@
     
     <a href="{{ route('logout') }}">Logout</a>
     
+    @if (session('admin_role') === 'guru' && isset($guru))
+    <h3>Data Guru</h3>
+    <p>Nama : {{ $guru->nama }}</p>
+    <p>Mata Pelajaran : {{ $guru->mapel }}</p>
+    @endif
+
+    
     <h2>Daftar Siswa</h2>
     
     {{-- Tombol tambah siswa hanya untuk admin --}}

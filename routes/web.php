@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Middleware\CekAdmin;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\GuruController;
 
 
 
@@ -26,7 +27,7 @@ Route::middleware(CekAdmin::class)->group(function () {
     Route::post('/siswa/{id}/update', [SiswaController::class, 'update'])->name('siswa.update');
     Route::get('/siswa/{id}/delete', [SiswaController::class, 'destroy'])->name('siswa.delete');
 
-
+Route::get('/guru', [GuruController::class, 'index'])->name('guru.index');
 
 });
 

@@ -10,5 +10,14 @@ class siswa extends Model
     //
     use HasFactory;
     protected $table = 'siswa';
-    protected $fillable = ['nama', 'bb', 'tb'];
+    protected $fillable = [
+        'id', 
+        'nama', 
+        'bb', 
+        'tb'];
+    protected $primaryKey = 'idsiswa';
+
+    public function siswa(){
+        return $this->hasOne(siswa::class, 'id');
+    }
 }

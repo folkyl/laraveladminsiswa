@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\admin;
 use App\Models\siswa;
+use App\Models\guru;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,5 +33,8 @@ class DatabaseSeeder extends Seeder
         Siswa::factory()->count(10)->create();
 
         $this->call(ArtikelSeeder::class);
+
+        siswa::factory()->count(15)->create();
+        guru::factory()->count(5)->create();
     }
 }

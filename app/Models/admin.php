@@ -11,4 +11,14 @@ class admin extends Model
     use HasFactory;
     protected $table = 'dataadmin';
     protected $fillable = ['username', 'password'];
+    protected $primaryKey = 'id';
+
+    public function siswa(){
+        return $this->hasOne(siswa::class, 'id');
+    }
+
+    public function guru()
+    {
+        return $this->hasOne(Guru::class, 'admin_id');
+    }
 }
